@@ -5,4 +5,5 @@
     <string name="interval_text_view_information">Intervalo de 1 até 1000.</string>
     <string name="result_edit_text">Inicie o sorteio</string>
     <string name="generate_button_text">Sortear</string>
+    <string name="title">Random Numbers</string>
 </resources>

@@ -7,7 +7,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_dice"
+            app:tint="@color/primary_color"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_color"
+            android:textAlignment="center"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/input_editText"
@@ -16,7 +44,11 @@
         android:inputType="number"
         android:layout_gravity="center"
         android:hint="@string/edit_text_hint"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        android:paddingVertical="20dp" />
 
     <Button
         android:id="@+id/limit_button"
@@ -24,7 +56,15 @@
         android:layout_height="wrap_content"
         android:text="@string/button_limit_description"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="16dp"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="15sp"
+        android:backgroundTint="@color/button_color"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/limit_textView"
@@ -32,7 +72,10 @@
         android:layout_height="wrap_content"
         android:text="@string/interval_text_view_information"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/result_textView"
@@ -40,7 +83,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/result_edit_text"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="28dp"
+        android:textColor="@color/primary_color"
+        android:textStyle="bold"
+        android:textSize="30sp"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp" />
 
     <Button
         android:id="@+id/generate_button"
@@ -48,6 +99,14 @@
         android:layout_height="wrap_content"
         android:text="@string/generate_button_text"
         android:layout_gravity="center"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="16dp"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="50dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="15sp"
+        android:backgroundTint="@color/button_color"
+        android:textColor="@color/white"/>
 
 </LinearLayout>
