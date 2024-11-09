@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title"
-            android:textSize="40sp"
+            android:textSize="35sp"
             android:textStyle="bold"
             android:textAllCaps="true"
             android:textColor="@color/primary_color"
@@ -83,16 +83,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/result_edit_text"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:textColor="@color/primary_color"
         android:textStyle="bold"
-        android:textSize="30sp"/>
+        android:textSize="45sp"/>
 
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="40dp" />
 
     <Button
         android:id="@+id/generate_button"
@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         android:text="@string/generate_button_text"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:paddingVertical="15dp"
         android:paddingHorizontal="50dp"
         android:textStyle="bold"

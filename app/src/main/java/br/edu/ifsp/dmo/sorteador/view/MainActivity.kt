@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         when (view) {
             binding.limitButton -> {
                 val limit: Int = try {
-                     binding.limitTextView.toString().toInt()
+                     binding.inputEditText.text.toString().toInt()
                 } catch (e: NumberFormatException) {
                     -1
                 }
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
     private fun setClickListener() {
         binding.generateButton.setOnClickListener(this)
-        binding.generateButton.setOnClickListener(this)
+        binding.limitButton.setOnClickListener(this)
     }
 
     private fun updateUI() {
