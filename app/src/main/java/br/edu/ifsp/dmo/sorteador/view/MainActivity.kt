@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.dmo.sorteador.R
 import br.edu.ifsp.dmo.sorteador.databinding.ActivityMainBinding
 import br.edu.ifsp.dmo.sorteador.model.Draw
+import java.util.Locale
 
 class MainActivity : AppCompatActivity(), OnClickListener {
 
@@ -39,7 +41,25 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 updateUI()
             }
             binding.generateButton -> {
-                binding.resultTextView.text = draw.getNumber().toString()
+                val number = draw.getNumber().toString().toInt()
+                if (number != -1) {
+                    binding.resultTextView.text = number.toString()
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Todos os números já foram sorteados.",
+                        Toast.LENGTH_SHORT).show()
+                }
+
+                updateListView()
+            }
+            binding.resetButton -> {
+                draw.reset()
+                Toast.makeText(
+                    this,
+                    "O sorteio foi reiniciado.",
+                    Toast.LENGTH_SHORT).show()
+                updateUI()
                 updateListView()
             }
         }
@@ -48,10 +68,11 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     private fun setClickListener() {
         binding.generateButton.setOnClickListener(this)
         binding.limitButton.setOnClickListener(this)
+        binding.resetButton.setOnClickListener(this)
     }
 
     private fun updateUI() {
-        val str = String.format("Intervalo de 1 à %,d.", draw.getHighBorder())
+        val str = String.format(Locale.getDefault(),"Intervalo de %d à %d.", draw.getLowBorder(), draw.getHighBorder())
         binding.limitTextView.text = str
         binding.inputEditText.text.clear()
         binding.resultTextView.text = getString(R.string.result_edit_text)

@@ -8,7 +8,7 @@ object DefaultLimit : SorteioStrategy() {
     }
 
     override fun getLowBorder(): Int {
-        return 1;
+        return 1
     }
 
     override fun getHighBorder(): Int {

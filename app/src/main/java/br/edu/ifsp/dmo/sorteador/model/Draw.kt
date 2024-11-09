@@ -13,11 +13,16 @@ class Draw(private val border: Int = 0) {
 
     fun getNumber(): Int {
         var number: Int
-        do {
-            number = strategy.nextNumber()
-        } while (!history.add(number))
 
-        return number;
+        if (history.size != getHighBorder()) {
+            do {
+                number = strategy.nextNumber()
+            } while (!history.add(number))
+        } else {
+            number = -1
+        }
+
+        return number
     }
 
     fun getHistory() = ArrayList(history)
@@ -25,4 +30,6 @@ class Draw(private val border: Int = 0) {
     fun getLowBorder() = strategy.getLowBorder()
 
     fun getHighBorder() = strategy.getHighBorder()
+
+    fun reset() = history.clear()
 }
