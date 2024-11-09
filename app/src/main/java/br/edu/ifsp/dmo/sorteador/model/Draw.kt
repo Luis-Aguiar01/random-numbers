@@ -1,7 +1,7 @@
 package br.edu.ifsp.dmo.sorteador.model
 
 class Draw(private val border: Int = 0) {
-    private lateinit var strategy: SorteioStrategy
+    private var strategy: SorteioStrategy
     private val history = HashSet<Int>()
 
     init {
