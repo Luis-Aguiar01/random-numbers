@@ -24,7 +24,8 @@ class NumberAdapter(context: Context, dataset: List<NumberItemList>)
 
         if (itemView != null && number != null) {
             itemView.findViewById<TextView>(R.id.number).text = number.number.toString()
-            itemView.findViewById<TextView>(R.id.number_position).text = number.position.toString() + "º:"
+            itemView.findViewById<TextView>(R.id.number_position).text =
+                number.position.toString() + "º:"
         }
 
         return itemView!!
