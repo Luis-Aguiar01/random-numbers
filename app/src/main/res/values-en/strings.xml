@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Draw Numbers</string>
+    <string name="edit_text_hint">Maximum value (optional)</string>
+    <string name="button_limit_description">Use limit</string>
+    <string name="interval_text_view_information">Interval from 1 to 1000.</string>
+    <string name="result_edit_text">Start the draw</string>
+    <string name="generate_button_text">Draw</string>
+    <string name="title">Random Numbers</string>
+    <string name="button_restart">Restart</string>
+    <string name="message_numbers_are_over">All numbers have been drawn.</string>
+    <string name="message_reset">The draw has been reset.</string>
+    <string name="numbers_interval">Interval from %d to %d.</string>
+</resources>

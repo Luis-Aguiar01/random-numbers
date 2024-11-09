@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 } else {
                     Toast.makeText(
                         this,
-                        "Todos os números já foram sorteados.",
+                        getString(R.string.message_numbers_are_over),
                         Toast.LENGTH_SHORT).show()
                 }
 
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 draw.reset()
                 Toast.makeText(
                     this,
-                    "O sorteio foi reiniciado.",
+                    getString(R.string.message_reset),
                     Toast.LENGTH_SHORT).show()
                 updateUI()
                 updateListView()
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
     private fun updateUI() {
         val str = String.format(Locale.getDefault(),
-            "Intervalo de %d à %d.", draw.getLowBorder(), draw.getHighBorder())
+            getString(R.string.numbers_interval), draw.getLowBorder(), draw.getHighBorder())
         binding.limitTextView.text = str
         binding.inputEditText.text.clear()
         binding.resultTextView.text = getString(R.string.result_edit_text)

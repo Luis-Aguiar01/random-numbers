@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import br.edu.ifsp.dmo.sorteador.R
 import br.edu.ifsp.dmo.sorteador.model.NumberItemList
+import java.util.Locale
 
 class NumberAdapter(context: Context, dataset: List<NumberItemList>)
     : ArrayAdapter<NumberItemList>(context, R.layout.number_list_item, dataset) {
@@ -25,7 +26,7 @@ class NumberAdapter(context: Context, dataset: List<NumberItemList>)
         if (itemView != null && number != null) {
             itemView.findViewById<TextView>(R.id.number).text = number.number.toString()
             itemView.findViewById<TextView>(R.id.number_position).text =
-                number.position.toString() + "º:"
+                String.format(Locale.getDefault(),"%dº:", number.position)
         }
 
         return itemView!!

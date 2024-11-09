@@ -6,4 +6,8 @@
     <string name="result_edit_text">Inicie o sorteio</string>
     <string name="generate_button_text">Sortear</string>
     <string name="title">Random Numbers</string>
+    <string name="button_restart">Reiniciar</string>
+    <string name="message_numbers_are_over">Todos os números já foram sorteados.</string>
+    <string name="message_reset">O sorteio foi reiniciado.</string>
+    <string name="numbers_interval">Intervalo de %d à %d.</string>
 </resources>
