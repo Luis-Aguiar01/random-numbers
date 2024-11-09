@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import br.edu.ifsp.dmo.sorteador.R
+import br.edu.ifsp.dmo.sorteador.model.NumberItemList
 
-class NumberAdapter(context: Context, dataset: List<Int>)
-    : ArrayAdapter<Int>(context, R.layout.number_list_item, dataset) {
-
-    private var nextPosition = 1;
+class NumberAdapter(context: Context, dataset: List<NumberItemList>)
+    : ArrayAdapter<NumberItemList>(context, R.layout.number_list_item, dataset) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var itemView = convertView
@@ -21,12 +20,11 @@ class NumberAdapter(context: Context, dataset: List<Int>)
             itemView = inflater.inflate(R.layout.number_list_item, null)
         }
 
-        val number: Int? = getItem(position)
+        val number: NumberItemList? = getItem(position)
 
         if (itemView != null && number != null) {
-            itemView.findViewById<TextView>(R.id.number).text = number.toString()
-            itemView.findViewById<TextView>(R.id.result_textView).text = nextPosition.toString()
-            nextPosition++
+            itemView.findViewById<TextView>(R.id.number).text = number.number.toString()
+            itemView.findViewById<TextView>(R.id.number_position).text = number.position.toString() + "º:"
         }
 
         return itemView!!

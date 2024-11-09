@@ -3,7 +3,6 @@ package br.edu.ifsp.dmo.sorteador.view
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.dmo.sorteador.R
@@ -81,11 +80,9 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     }
 
     private fun updateListView() {
-        val adapter: ArrayAdapter<Int> = ArrayAdapter(
+        binding.listView.adapter  = NumberAdapter(
             this,
-            android.R.layout.simple_list_item_1,
             draw.getHistory()
         )
-        binding.listView.adapter = adapter
     }
 }

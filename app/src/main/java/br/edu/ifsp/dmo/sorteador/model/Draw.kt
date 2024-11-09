@@ -2,7 +2,8 @@ package br.edu.ifsp.dmo.sorteador.model
 
 class Draw(private val border: Int = 0) {
     private var strategy: SorteioStrategy
-    private val history = HashSet<Int>()
+    private val history = HashSet<NumberItemList>()
+    private var nextIndex = 1
 
     init {
         if (border == 0)
@@ -17,7 +18,8 @@ class Draw(private val border: Int = 0) {
         if (history.size != getHighBorder()) {
             do {
                 number = strategy.nextNumber()
-            } while (!history.add(number))
+            } while (!history.add(NumberItemList(number, nextIndex)))
+            nextIndex++
         } else {
             number = -1
         }
@@ -31,5 +33,8 @@ class Draw(private val border: Int = 0) {
 
     fun getHighBorder() = strategy.getHighBorder()
 
-    fun reset() = history.clear()
+    fun reset() {
+        history.clear()
+        nextIndex = 1
+    }
 }
