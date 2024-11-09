@@ -1,13 +1,13 @@
 ## Sorteador - Aplicativo Android
 
 ## Descrição
-O Sorteador é um aplicativo Android desenvolvido para sortear números inteiros dentro de um intervalo pré-definido. 
-Ele utiliza os padrões de design Strategy e Singleton para definir a lógica principal do aplicativo.
+Este é um aplicativo Android desenvolvido para sortear números inteiros dentro de um intervalo pré-definido. 
+Ele utiliza os padrões de design Strategy e Singleton para definir a lógica principal.
 
 ## Objetivos do Projeto
 - Praticar o uso do padrão Strategy, permitindo que o algoritmo de sorteio possa ser alterado dinamicamente sem modificar a estrutura do código principal.
-- Aplicar o padrão Singleton para garantir que a instância do sorteador padrão seja única e gerenciada centralizadamente.
-- Explorar o conceito de LinearLayout para organização e design da interface de usuário.
+- Aplicar o padrão Singleton para garantir que a instância do sorteador padrão (sem limite definido pelo usuário) seja única.
+- Explorar o conceito de LinearLayout, ViewBinding e ListView.
 
 ## Tecnologias Utilizadas
 - Kotlin: Linguagem de programação utilizada para o desenvolvimento.
