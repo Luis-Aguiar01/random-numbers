@@ -3,6 +3,7 @@ package br.edu.ifsp.dmo.sorteador.view
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.dmo.sorteador.R
 import br.edu.ifsp.dmo.sorteador.databinding.ActivityMainBinding
@@ -34,11 +35,12 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                     Draw(limit)
                 else
                     Draw()
-                
+
                 updateUI()
             }
             binding.generateButton -> {
                 binding.resultTextView.text = draw.getNumber().toString()
+                updateListView()
             }
         }
     }
@@ -53,5 +55,15 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         binding.limitTextView.text = str
         binding.inputEditText.text.clear()
         binding.resultTextView.text = getString(R.string.result_edit_text)
+        updateListView()
+    }
+
+    private fun updateListView() {
+        val adapter: ArrayAdapter<Int> = ArrayAdapter(
+            this,
+            android.R.layout.simple_list_item_1,
+            draw.getHistory()
+        )
+        binding.listView.adapter = adapter
     }
 }
