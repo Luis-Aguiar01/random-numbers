@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setClickListener()
     }
 
     override fun onClick(view: View) {
@@ -37,5 +38,10 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 binding.resultTextView.text = draw.getNumber().toString()
             }
         }
+    }
+
+    private fun setClickListener() {
+        binding.generateButton.setOnClickListener(this)
+        binding.generateButton.setOnClickListener(this)
     }
 }
