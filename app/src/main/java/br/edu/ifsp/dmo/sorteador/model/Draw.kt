@@ -2,7 +2,7 @@ package br.edu.ifsp.dmo.sorteador.model
 
 class Draw(private val border: Int = 0) {
     private var strategy: SorteioStrategy
-    private val history = HashSet<NumberItemList>()
+    private val history = LinkedHashSet<NumberItemList>()
     private var nextIndex = 1
 
     init {
