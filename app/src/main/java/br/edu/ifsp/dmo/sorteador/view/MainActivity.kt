@@ -1,4 +1,4 @@
-package br.edu.ifsp.dmo.sorteador
+package br.edu.ifsp.dmo.sorteador.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
