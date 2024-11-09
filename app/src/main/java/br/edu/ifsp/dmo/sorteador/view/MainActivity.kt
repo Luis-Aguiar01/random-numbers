@@ -72,7 +72,8 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     }
 
     private fun updateUI() {
-        val str = String.format(Locale.getDefault(),"Intervalo de %d à %d.", draw.getLowBorder(), draw.getHighBorder())
+        val str = String.format(Locale.getDefault(),
+            "Intervalo de %d à %d.", draw.getLowBorder(), draw.getHighBorder())
         binding.limitTextView.text = str
         binding.inputEditText.text.clear()
         binding.resultTextView.text = getString(R.string.result_edit_text)
